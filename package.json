@@ -1,0 +1,25 @@
+{
+  "name": "stripe-webhook-proxy",
+  "version": "1.0.0",
+  "description": "Proxy webhook events from Stripe to Mariana review apps on Heroku",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "stripe": "^8.69.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
+    "prettier": "2.0.5"
+  }
+}
