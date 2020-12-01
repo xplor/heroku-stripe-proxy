@@ -1,0 +1,41 @@
+{
+"name": "Heroku Stripe Proxy",
+  "description": "Forward Stripe event webhooks to all review apps in a Heroku pipeline",
+  "keywords": [
+    "stripe",
+    "heroku",
+    "proxy"
+  ],
+  "repository": "https://github.com/Mariana-Tek/heroku-stripe-proxy",
+  "env": {
+    "HEROKU_API_KEY": {
+      "description": "Herokou API key."
+    },
+    "HEROKU_PIPELINE_ID": {
+      "description": "The ID of the pipeline that will receive the event webhooks."
+    },
+    "WEBHOOK_PATH": {
+      "description": "The path that receives the Stripe webhooks, both from Stripe and to review apps."
+    },
+    "STRIPE_SECRET_KEY": {
+      "description": "OPTIONAL: Stripe secret key to check webhook signature before proxying.",
+      "required": false
+    },
+    "STRIPE_ENDPOINT_SECRET": {
+      "description": "OPTIONAL: Stripe endpoint secret to check webhook signature before proxying.",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  },
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
